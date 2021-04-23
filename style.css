@@ -8,3 +8,7 @@ body {
   justify-items: center;
   align-items: center;
 }
+
+.row {
+  justify-content: center;
+}
