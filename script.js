@@ -21,6 +21,8 @@ var formSubmitHandler = function (event) {
             .then(function (resp) { return resp.json() })
             .then(function (data) {
                 console.log(data);
+                const location = data.name;
+                locationEl.textContent = location;
             })
             .catch(function () {
 
