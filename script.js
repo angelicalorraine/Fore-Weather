@@ -1,21 +1,50 @@
-var cityFormEl = document.querySelector('#city-form');
-var cityInputEl = document.querySelector('#city');
-var forecastContainerEl = document.querySelector('#forecast-container');
-var citySearchTerm = document.querySelector('#city-search-term');
-
-cityInputEl = "Whittier";
-
-currentURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityInputEl + '&appid=6e5dd978f10ad44dc4fa36386d4e8fdb';
-
-forecastURL = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityInputEl + '&appid=6e5dd978f10ad44dc4fa36386d4e8fdb';
+var cityEl = document.querySelector("#cityInput");
+var cityFormEl = document.querySelector("#city-form");
+var locationEl = document.querySelector("#city-location");
+var temperatureEl = document.querySelector("#temperature");
+var descriptionData = document.querySelector("description-data");
+var humidityEl = document.querySelector("#humidity-data");
+var windEl = document.querySelector("#wind-data");
+var humidityEl = document.querySelector("#humidity-data");
 
 
 
-fetch(currentURL)
-    .then(response => response.json())
-    .then(data => console.log(data));
 
-fetch(forecastURL)
-    .then(response => response.json())
-    .then(data => console.log(data));
 
+var formSubmitHandler = function (event) {
+    event.preventDefault();
+
+    var city = cityEl.value;
+
+    if (city) {
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=6e5dd978f10ad44dc4fa36386d4e8fdb')
+            .then(function (resp) { return resp.json() })
+            .then(function (data) {
+                console.log(data);
+            })
+            .catch(function () {
+
+            })
+
+        fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=6e5dd978f10ad44dc4fa36386d4e8fdb')
+            .then(function (resp) { return resp.json() })
+            .then(function (data) {
+                console.log(data);
+            })
+            .catch(function () {
+
+            })
+
+
+
+
+
+
+
+
+    } else {
+        alert('Please enter a city');
+    }
+};
+
+cityFormEl.addEventListener('submit', formSubmitHandler);

@@ -11,9 +11,12 @@
  href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
  integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
  crossorigin="anonymous"/>
+ 
 
  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
  rel="stylesheet"/>
+
+ <link rel ="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.css">
 
  <link rel="stylesheet" href="style.css" />
 
@@ -30,42 +33,92 @@
 
 </head>
 
-<body>
+<body class = "d-flex flex-column min-100-vh">
 
-  <div class="jumbotron">
-    <h1 class="display-4">Weather Forecast</h1>
+  <header class = "hero">
+    <h1 class="app-title">Weather Forecast</h1>
     <p class="lead">The trouble with weather forecasting is that <br> it’s right too often to ignore it and wrong too often to rely on it.</p>
-    <hr class="my-4">
-    <div class = "card searchinput"> 
-      <h3 class="card-header text-uppercase">Search for City</h3>
-        <form id="city-form" class="card-body">
-          <div class="input-group input-group-lg mb-3">
-          <input name="city" id="city" type="text" autofocus="true" class="form-input form-control-lg" />
-          <button type="submit" class="btn btn-outline-secondary">Search</button>
-        </form>
-    </div>
 
+  </header>
       
 
 
-        
+  <main class="container d-flex flex-wrap flex-row justify-space-between">
+    <div class="col-sm-12 col-md-4">
+
+      <div class="card">
+        <h3 class="card-header text-uppercase">Search by City</h3>
+        <span id ="error"></span>
+        <form id="city-form" class="card-body">
+          <label class="form-label" for="city">City</label>
+          <input name="city" id="cityInput" type="text" autofocus="true" class="form-input" />
+          <button id="submitWeather" type="submit" class="btn">Search</button>
+        </form>
+      </div>
+    </div>
+    
+  </main>
+
+  <div class="container ">
+    <div class ="row">
+      <div class = "col-8 weather mx-auto">
+        <div class = "weather-head">
+          <h1 id="city-location" class="text-center display-4"> Miami, US</h1>
+        </div>
+        <div class = "row">
+          <div id ="description" class="col-6 text-center">
+          <i  class="wi wi-day-thunderstorm" id="icon-desc"></i>
+            <p id="desc">ThundeerStorm</p>
+      </div>
+      <div id="temperature" class="col-6 text-center">
+        75 <i id="icon-thermometer" class="wi wi-thermometer"></i>
+      </div>
+    </div>
+        <!--Weather body-->
+    <div class="weather-body">
+      <div class ="row">
+      
+        <div class="humidity col-4 text-center">
+          <i class = "wi wi-raindrops"></i>
+          <span>Humidity</span>
+        </div>
+        <div class="wind col-4 text-center">
+          <i class = "wi wi-strong-wind"></i>
+          <span>Wind Speed</span>
+        </div>
+        <div class="wind-degree col-4 text-center">
+          <i class = "wi wi-direction-up-right"></i>
+          <span>Wind Degree</span>
+        </div>
+      
+      </div>
+      <!-- body data-->
+      <div class="row">
+        <div class = "humidity-data col-4 text-center">
+          75%
+        </div>
+
+        <div class="wind-data col-4 text-center">
+          3.4m/h
+        </div>
+
+        <div class= "wind-degree-data col-4 text-center">
+        </div>
+
+      </div>
+          </div>
+      </div>
+
+    </div>
+
 
   </div>
+    <h2 class="subtitle">City: <span id="city-search-term"></span></h2>
+    <div id="forecast-container" class="list-group"></div>
 
-  
 
     
   </div>
-
-  <div class = "container-fluid searchCont">
-    <div class="col-12 col-md-8">
-      <h2 class="subtitle">City: <span id="city-search-term"></span></h2>
-      <!-- There needs to be an empty HTML element for us to write repository data to. -->
-      <div id="forecast-container" class="list-group"></div>
-    </div>
-    
-    </div>
-
 
 
 

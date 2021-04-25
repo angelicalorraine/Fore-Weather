@@ -2,6 +2,18 @@ body {
   text-align: center;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin: 0;
+  color: var(--dark);
+  line-height: 1.25;
+}
+
 .jumbotron {
   display: flex;
   flex-direction: column;
@@ -9,6 +21,42 @@ body {
   align-items: center;
 }
 
-.row {
+.input-group {
   justify-content: center;
+}
+
+.weather {
+  border: 1px solid white;
+  margin-top: 10rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+#icon-desc {
+  font-size: 5rem;
+  padding-top: 2rem;
+}
+
+#desc {
+  font-size: 2rem;
+}
+
+#temperature {
+  font-size: 7rem;
+}
+
+.humidity,
+.wind,
+.wind-degree {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  font-size: 1.5rem;
+}
+
+.humidity-data,
+.wind-data,
+.wind-degree-data {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 2rem;
 }
