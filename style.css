@@ -9,7 +9,7 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  margin: 0;
+  margin: 10px;
   color: var(--dark);
   line-height: 1.25;
 }
@@ -21,13 +21,18 @@ h6 {
   align-items: center;
 }
 
+.container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .input-group {
   justify-content: center;
 }
 
 .weather {
   border: 1px solid white;
-  margin-top: 10rem;
+
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
 }
@@ -42,7 +47,8 @@ h6 {
 }
 
 #temperature {
-  font-size: 7rem;
+  padding-top: 1rem;
+  font-size: 6rem;
 }
 
 .humidity,
