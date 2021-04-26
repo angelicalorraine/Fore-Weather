@@ -1,0 +1,38 @@
+body {
+  text-align: center;
+  font-family: Roboto;
+}
+
+.fas {
+  color: rgba(14, 158, 241, 0.774);
+}
+
+.btn {
+  border-color: #ced4da;
+}
+h1 {
+  margin-top: -2rem;
+  font-family: "bebas neue", sans-serif;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.jumbotron {
+  background-color: rgb(247 247 247)
+  color: rgb(255, 255, 255);
+
+  margin-bottom: 20px;
+}
+
+.card-body {
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+.searchCol {
+  margin-top: 1rem;
+}
+
+p {
+  font-size: 15px;
+}
